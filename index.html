@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>종구 ♥ 인하 결혼합니다</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="description" content="2026년 12월 19일 토요일 낮 12시 30분, 청주 리움웨딩컨벤션">
+<meta property="og:title" content="윤종구 ♥ 조인하 결혼합니다">
+<meta property="og:description" content="2026. 12. 19 토요일 12:30 · 청주 리움웨딩컨벤션">
+<link rel="preload" href="griun.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="gowun.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="gmarket.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dubabbaa-sys.github.io/wedding/">
+<meta property="og:image" content="https://dubabbaa-sys.github.io/wedding/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="theme-color" content="#F6F5F0">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; font: 14px/1.4 system-ui, sans-serif; }
+[hidden] { display: none !important; }
+</style>
+<style>
+@font-face { font-family: 'Gmarket'; src: url('gmarket.woff2') format('woff2'); font-weight: 500; font-display: block; }
+@font-face { font-family: 'Gowun'; src: url('gowun.woff2') format('woff2'); font-display: block; }
+@font-face { font-family: 'PretendardSub'; src: url('pretendard-r.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'PretendardSub'; src: url('pretendard-m.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Griun'; src: url('griun.woff2') format('woff2'); font-display: block; }
+
+/* Layout: the Figma frame (420px wide) is rebuilt 1:1 as absolutely placed layers,
+   scaled by --u so the whole collage fits any phone width. Single light paper look by choice. */
+:root {
+  color-scheme: light;
+  --paper: #FBFAF6;      /* frame fill from Figma */
+  --desk: #EFEBE1;       /* around the card on wide screens */
+  --ink: #000000;
+  --ink-soft: #323232;
+  --olive: #445700;      /* "마음 전하실 곳" */
+  --sky-line: #A6C9E0;
+  --sky-day: #C4DDED;
+  --sky-end: #DDEBF2;
+  --sky-num: #7FAECB;
+  --card: #FFFFFF;
+  --w: min(100vw, 480px);
+  --u: calc(var(--w) / 420);
+
+  /* ===== 스크롤 연출 조절값 (숫자만 바꾸면 돼요) ===== */
+  --photo-speed: 1.25s;    /* 사진 한 장이 올라와 붙는 데 걸리는 시간 (클수록 천천히) */
+  --photo-gap: .28s;       /* 사진끼리 차례로 붙는 간격 (클수록 하나씩 또박또박) */
+  --photo-rise: 70;        /* 사진이 얼마나 아래에서 올라오는지 (클수록 멀리서) */
+  --sticker-speed: .95s;   /* 스티커가 꾹 붙는 시간 */
+  --sticker-gap: .14s;     /* 스티커끼리 붙는 간격 */
+  --trigger: 20%;          /* 화면 아래에서 얼마나 올라와야 시작하는지 (클수록 늦게, 화면 안쪽에서 시작) */
+}
+html, body { background: var(--desk); }
+body { color: var(--ink); -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+
+.card {
+  position: relative; width: var(--w); height: calc(7015 * var(--u));
+  margin: 0 auto; background: var(--paper); overflow: hidden;
+  box-shadow: 0 0 40px rgba(60, 50, 30, .12);
+}
+[hidden] { display: none !important; }
+/* if a phone still auto-links a number or address, make it look and act like plain text */
+a[x-apple-data-detectors], a[href^="tel:"], a[href^="sms:"] { color: inherit !important; text-decoration: none !important; font: inherit !important; pointer-events: none; }
+.paper9 { border-style: solid; border-color: transparent; box-sizing: border-box; border-image-repeat: stretch; pointer-events: none; }
+.l { position: absolute; display: block; max-width: none; pointer-events: none; user-select: none; -webkit-user-drag: none; }
+.t { position: absolute; white-space: pre; font-weight: 500; }
+.deco { font-weight: 400; }
+.t-fri, .t-sat, .t-sun { font-weight: 500; }
+/* decorative text keeps its Figma box; if a phone enlarges letters, it shrinks to fit (see fit()) */
+.deco span { display: inline-block; transform-origin: 0 0; }
+.t-title span { transform-origin: 50% 0; }
+
+/* readable floor: on small phones these never get smaller than the px value */
+:root { --min-body: 0.9375rem; --min-head: 1.125rem; --min-dday: 1rem; }
+
+/* place + shuttle: one flowing column */
+.info { position: absolute; display: flex; flex-direction: column; align-items: flex-start; font-family: 'Gowun Dodum', 'Gowun', sans-serif; color: #000; }
+.info-h { margin: 0; font-weight: 400; font-size: max(calc(20 * var(--u)), var(--min-head)); line-height: 1.45; color: #323232; letter-spacing: -.02em; }
+.info-p { margin: calc(8 * var(--u)) 0 0; font-size: max(calc(14 * var(--u)), var(--min-body)); line-height: 1.7; max-width: 100%; word-break: keep-all; overflow-wrap: anywhere; }
+.info .addr { cursor: pointer; }
+.info .shuttle-h { margin-top: calc(41 * var(--u)); margin-left: calc(4 * var(--u)); color: #323232; }
+.info .shuttle-h + .info-p { margin-left: calc(4 * var(--u)); }
+
+/* D-day line */
+.dday { position: absolute; text-align: center; font-family: 'Gowun Dodum', 'Gowun', sans-serif; color: #000;
+  font-size: max(calc(18 * var(--u)), var(--min-dday)); line-height: 1.45; word-break: keep-all; }
+.dday b { font-weight: 400; color: #2E4470; }
+[data-copy] { cursor: pointer; }
+[data-copy]:focus-visible, .maps a:focus-visible, .acc-row:focus-visible { outline: 2px solid var(--sky-num); outline-offset: 3px; border-radius: 3px; }
+
+/* calendar: circle grid on the blue note, Monday first */
+.cal { position: absolute; --nv: #334364; --mute: rgba(120, 165, 200, .28); --hi: #FBE7A1; font-family: 'PretendardSub', 'Pretendard', 'Apple SD Gothic Neo', sans-serif; color: var(--nv); }
+.cal-head { display: flex; justify-content: space-between; align-items: flex-start; height: calc(34 * var(--u)); font-size: calc(20 * var(--u)); line-height: 1; letter-spacing: -.02em; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, calc(41.2 * var(--u))); grid-auto-rows: calc(41.2 * var(--u));
+  column-gap: calc(9.6 * var(--u)); row-gap: calc(8.8 * var(--u)); }
+.cal .d { display: grid; place-items: center; border-radius: 50%; box-sizing: border-box; border: calc(1.1 * var(--u)) solid var(--nv);
+  font-size: max(calc(15 * var(--u)), 0.8125rem); font-variant-numeric: tabular-nums; letter-spacing: -.02em; line-height: 1; }
+.cal .d.h { background: var(--nv); color: #fff; border: 0; font-weight: 500; font-size: max(calc(16 * var(--u)), 0.75rem); }
+.cal .d.e { background: var(--mute); border: 0; }
+.cal .d.d19 { background: var(--hi); }
+.cal.in .d { animation: dotin .45s cubic-bezier(.2, 1.4, .4, 1) both; animation-delay: calc(var(--k, 0) * 22ms); }
+.cal.in .d.d19 { animation: dotin .45s cubic-bezier(.2, 1.4, .4, 1) both, hi 1.1s ease-in-out both; animation-delay: calc(var(--k, 0) * 22ms), 1.1s; }
+@keyframes dotin { from { opacity: 0; scale: .4; } to { opacity: 1; scale: 1; } }
+@keyframes hi { 0%, 100% { scale: 1; } 40% { scale: 1.18; box-shadow: 0 0 0 calc(5 * var(--u)) rgba(251, 231, 161, .55); } }
+
+/* map links */
+.maps { display: flex; flex-wrap: wrap; column-gap: calc(29 * var(--u)); row-gap: 0; margin-top: calc(5 * var(--u)); margin-bottom: -6px; }
+.maps a { color: #264291; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; font-family: 'Gowun Dodum', 'Gowun', sans-serif;
+  font-size: max(calc(14 * var(--u)), var(--min-body)); line-height: 1.7; white-space: nowrap;
+  display: inline-flex; align-items: center; min-height: 36px; }
+.maps a:active { opacity: .6; }
+
+/* accounts (Figma Frame 58): heading, note, then two groups with washi-tape labels */
+.accs { position: absolute; display: flex; flex-direction: column; gap: calc(24 * var(--u)); font-family: 'Gowun Dodum', 'Gowun', sans-serif; color: #000; }
+.accs-head { display: flex; flex-direction: column; gap: calc(8 * var(--u)); }
+.accs-title { margin: 0; font-weight: 400; font-size: max(calc(20 * var(--u)), var(--min-head)); line-height: 1.45; color: #515d14; }
+.accs-note { margin: 0; max-width: calc(225 * var(--u)); font-size: max(calc(14 * var(--u)), 0.875rem); line-height: 1.45; color: #625c53; word-break: keep-all; }
+.acc-group { display: flex; flex-direction: column; gap: calc(14 * var(--u)); }
+.acc-group ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: calc(14 * var(--u)); }
+.acc-tape { align-self: flex-start; margin: 0; padding: calc(6 * var(--u)) calc(26 * var(--u)) calc(5 * var(--u));
+  background: center / 100% 100% no-repeat; font-weight: 400; font-size: max(calc(14 * var(--u)), 0.875rem); line-height: 1.45; color: #000; }
+.acc-row { display: flex; align-items: center; gap: calc(8 * var(--u)); padding-bottom: calc(12 * var(--u)); border-bottom: 1px dashed #c8beb1; }
+.acc-text { flex: 1; min-width: 0; display: flex; flex-direction: column; font-size: max(calc(14 * var(--u)), 0.875rem); line-height: 1.45; }
+.acc-who { color: #625c53; word-break: keep-all; }
+.acc-num { color: #000; font-variant-numeric: tabular-nums; }
+.acc-num .no { white-space: normal; word-break: keep-all; }
+.acc-num .bank { white-space: nowrap; }
+.acc-copy { flex: none; border: 0; border-radius: 4px; background: rgba(137, 106, 78, .2); color: #342e25; cursor: pointer;
+  font: inherit; font-size: max(calc(14 * var(--u)), 0.875rem); line-height: 1.45; padding: calc(4 * var(--u)) calc(10 * var(--u)); white-space: nowrap; min-height: 34px; min-width: 44px; }
+.acc-copy:active { background: rgba(137, 106, 78, .32); }
+.acc-copy:focus-visible { outline: 2px solid var(--sky-num); outline-offset: 2px; }
+
+/* ---------- interactions ---------- */
+.l.tap, .l.photo { pointer-events: auto; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.l.photo { cursor: pointer; }
+
+.wait:not(.in) { opacity: 0; }
+/* stickers get "pressed on" as they scroll in */
+.pop.in { animation: stick var(--sticker-speed) cubic-bezier(.2, 1.4, .4, 1) both; animation-delay: var(--d, 0s); }
+/* words written on a tape: fade in once the tape has landed */
+.pop.quick.in { animation-duration: .55s; }
+.pop.tx.in { animation: txin .35s ease-out both; animation-delay: calc(var(--d, 0s) + .4s); }
+@keyframes txin { from { opacity: 0; translate: 0 calc(4 * var(--u)); } to { opacity: 1; translate: 0 0; } }
+@keyframes stick {
+  0%   { opacity: 0; scale: 1.18; translate: 0 calc(-14 * var(--u)); }
+  70%  { opacity: 1; }
+  100% { opacity: 1; scale: 1; translate: 0 0; }
+}
+/* photos slide up from just below and land one after another */
+.photo.in { animation: land var(--photo-speed) cubic-bezier(.16, 1, .3, 1) both; animation-delay: var(--d, 0s); }
+@keyframes land {
+  0%   { opacity: 0; translate: 0 calc(var(--photo-rise) * var(--u)); rotate: 2.5deg; }
+  55%  { opacity: 1; }
+  100% { opacity: 1; translate: 0 0; rotate: 0deg; }
+}
+
+/* first screen: a slow, ordered opening */
+.go .intro { animation-duration: .7s; animation-fill-mode: both; animation-delay: var(--t); animation-timing-function: cubic-bezier(.22, 1, .36, 1); }
+.go .i-vline { animation-name: vline; transform-origin: 50% 0; animation-duration: .8s; }
+.go .i-hline { animation-name: hline; transform-origin: 0 50%; animation-duration: .8s; }
+.go .i-lace  { animation-name: lace; animation-duration: .9s; }
+.go .i-rise  { animation-name: rise; }
+.go .i-drop  { animation-name: stick; animation-duration: .65s; animation-timing-function: cubic-bezier(.2, 1.4, .4, 1); }
+.go .i-paper { animation-name: paper; animation-duration: .8s; }
+.go .i-type  { animation-name: type; animation-duration: .7s; animation-timing-function: steps(22, end); }
+@keyframes vline { from { scale: 1 0; } to { scale: 1 1; } }
+@keyframes hline { from { scale: 0 1; } to { scale: 1 1; } }
+@keyframes lace  { from { opacity: 0; scale: .93; rotate: -2deg; } to { opacity: 1; scale: 1; rotate: 0deg; } }
+@keyframes rise  { from { opacity: 0; translate: 0 calc(10 * var(--u)); } to { opacity: 1; translate: 0 0; } }
+@keyframes paper { from { opacity: 0; translate: calc(-30 * var(--u)) calc(8 * var(--u)); rotate: -4deg; } to { opacity: 1; translate: 0 0; rotate: 0deg; } }
+@keyframes type  { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+/* letter beads drop in one by one */
+.tile.in { animation: bead .55s cubic-bezier(.3, 1.6, .5, 1) both; animation-delay: calc(var(--b, 0s) + var(--i) * 70ms); }
+@keyframes bead { 0% { opacity: 0; translate: 0 calc(-30 * var(--u)); rotate: -25deg; } 100% { opacity: 1; translate: 0 0; rotate: 0deg; } }
+
+/* handwriting: each stroke appears in writing order */
+.ink.in { animation: write .28s ease-out both; animation-delay: calc(.25s + var(--i) * 90ms); }
+/* "We're getting Married" (g1) and "Our Little Archive" (g3): written twice as fast */
+.ink.in[data-ink="g1"], .ink.in[data-ink="g2"], .ink.in[data-ink="g3"] { animation-duration: .14s; animation-delay: calc(.125s + var(--i) * 45ms); }
+@keyframes write { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+
+/* garlands breathe */
+.sway { animation: sway 5.5s ease-in-out infinite alternate; }
+.sway-top   { transform-origin: 50% 0%; animation: flutter 7s ease-in-out infinite; }
+/* ribbon garland: hangs from the top and bends like fabric instead of rotating stiffly */
+@keyframes flutter {
+  0%   { transform: skewX(0deg) scaleY(1); rotate: 0deg; }
+  20%  { transform: skewX(2.6deg) scaleY(.992); rotate: .5deg; }
+  40%  { transform: skewX(-1.2deg) scaleY(1.006); rotate: -.3deg; }
+  60%  { transform: skewX(-2.8deg) scaleY(.99); rotate: -.6deg; }
+  80%  { transform: skewX(1.4deg) scaleY(1.004); rotate: .3deg; }
+  100% { transform: skewX(0deg) scaleY(1); rotate: 0deg; }
+}
+.sway-left  { transform-origin: 0% 20%; animation-duration: 6.5s; }
+.sway-right { transform-origin: 100% 20%; animation-duration: 6s; animation-delay: -2s; }
+@keyframes sway { from { rotate: -1.4deg; } to { rotate: 1.4deg; } }
+
+/* tap a sticker and it jiggles */
+.tap.wig { animation: wig .5s ease both; }
+/* photos: a gentler wobble, like nudging a stuck-on print */
+.photo.wig { animation: wigsoft .55s ease both; }
+@keyframes wigsoft { 0%,100% { rotate: 0deg; scale: 1; } 25% { rotate: -2.5deg; scale: 1.025; } 55% { rotate: 2deg; } 80% { rotate: -.8deg; } }
+@keyframes wig { 0%,100% { rotate: 0deg; scale: 1; } 25% { rotate: -9deg; scale: 1.08; } 55% { rotate: 7deg; } 80% { rotate: -3deg; } }
+
+/* ring drawn around the 19th */
+.ring { position: absolute; overflow: visible; pointer-events: none; }
+.ring path { fill: none; stroke: #E0607E; stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.ring.in path { animation: ring 1s .35s ease-in-out both; }
+@keyframes ring { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.cal .c.d19 { color: #E0607E; }
+
+
+/* bursts of hearts from a tap */
+.heart { position: fixed; z-index: 998; pointer-events: none; translate: -50% -50%; opacity: 0; animation: heartup 1.4s ease-out both; }
+.heart i { display: block; width: 100%; height: 100%; animation: heartsway 1.4s ease-in-out both; animation-delay: inherit; filter: drop-shadow(0 1px 1px rgba(200, 80, 110, .25)); }
+.heart svg { display: block; overflow: visible; }
+/* pop in with a squishy bounce, then drift up like a little balloon */
+@keyframes heartup {
+  0%   { opacity: 0; transform: translate(0, 0) scale(0); }
+  12%  { opacity: 1; transform: translate(0, -4px) scale(1.3, .85); }
+  22%  { transform: translate(0, -8px) scale(.9, 1.12); }
+  32%  { transform: translate(calc(var(--hx) * .2), -12px) scale(1); }
+  75%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--hx), var(--hy)) scale(.8); }
+}
+@keyframes heartsway { 0%, 30% { rotate: 0deg; } 50% { rotate: -12deg; } 70% { rotate: 10deg; } 90%, 100% { rotate: -4deg; } }
+
+/* photo viewer */
+.lb { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: rgba(28, 24, 18, .9);
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  opacity: 0; transition: opacity .25s; touch-action: pan-y; }
+.lb.on { opacity: 1; }
+.lb figure { margin: 0; display: grid; gap: 12px; justify-items: center; }
+.lb img { max-width: min(92vw, 440px); max-height: 74vh; background: #fff; padding: 8px 8px 30px; box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  rotate: var(--tilt, 0deg); transition: rotate .3s, translate .25s, opacity .25s; }
+.lb figcaption { color: #F3EEE2; font: 13px/1 'Varela Round', sans-serif; letter-spacing: .08em; }
+.lb button { position: absolute; border: 0; background: rgba(255,255,255,.14); color: #fff; width: 44px; height: 44px; border-radius: 50%; font-size: 22px; line-height: 1; cursor: pointer; }
+.lb button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lb .x { top: calc(14px + env(safe-area-inset-top, 0px)); right: calc(14px + env(safe-area-inset-right, 0px)); }
+.lb .pv { left: calc(10px + env(safe-area-inset-left, 0px)); top: 50%; translate: 0 -50%; }
+.lb .nx { right: calc(10px + env(safe-area-inset-right, 0px)); top: 50%; translate: 0 -50%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pop.in, .pop.tx.in, .photo.in, .go .intro, .tile.in, .ink.in, .sway, .tap.wig, .cal.in .d, .heart { animation: none !important; }
+  .lb, .lb img { transition: none; }
+}
+
+/* toast stack: newest at the bottom with a boing, older ones pushed up */
+.toasts { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; pointer-events: none; z-index: 999; width: max-content; max-width: calc(100vw - 32px); }
+.tw { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .25s ease-out, opacity .3s; }
+.tw.on { grid-template-rows: 1fr; }
+.tw.old { opacity: .55; }
+.tw.out { grid-template-rows: 0fr; opacity: 0; }
+.tw > div { overflow: hidden; display: flex; justify-content: center; min-height: 0; }
+.tw > div > .toast { margin: 4px 20px 6px; }
+.toast { background: var(--ink-soft); color: var(--paper); font-family: 'Gowun Dodum', 'Gowun', sans-serif; font-size: 15px; line-height: 1.4;
+  padding: 10px 18px; border-radius: 999px; text-align: center; word-break: keep-all; box-shadow: 0 2px 5px rgba(0,0,0,.1); }
+.toast b { font-weight: 400; color: #FBE7A1; }
+.tw.on .toast { animation: boing .6s cubic-bezier(.2, 1.6, .4, 1) both; }
+@keyframes boing { 0% { transform: scale(.3) translateY(14px); opacity: 0; } 55% { transform: scale(1.07) translateY(-2px); opacity: 1; }
+  75% { transform: scale(.95); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .tw { transition: none; } .tw.on .toast { animation: none; } }
+</style>
+</head>
+<body>
+<main class="card" aria-label="윤종구, 조인하 모바일 청첩장">
+<img class="l" src="img/4767-214.webp" alt="" loading="lazy" decoding="async" data-fy="3231.1" data-fh="695.5" style="left:calc(0 * var(--u));top:calc(3231.1 * var(--u) + var(--dy, 0px));width:calc(420 * var(--u));height:calc(695.5 * var(--u) + var(--dh, 0px));z-index:0">
+<div class="l paper9" data-fy="6105" data-fh="780" aria-hidden="true" style="left:calc(0 * var(--u));top:calc(6105 * var(--u) + var(--dy, 0px));width:calc(420 * var(--u));height:calc(780 * var(--u) + var(--dh, 0px));z-index:1;border-image-source:url(img/4767-215.webp);border-image-slice:468 0 468 0 fill;border-image-width:calc(234 * var(--u)) 0 calc(234 * var(--u)) 0"></div>
+<img class="l" src="img/4767-216.webp" alt="" loading="lazy" decoding="async" data-fy="5866" data-fh="98" style="left:calc(0 * var(--u));top:calc(5866 * var(--u) + var(--dy, 0px));width:calc(420 * var(--u));height:calc(98 * var(--u) + var(--dh, 0px));z-index:2">
+<img class="l pop photo tap" src="img/4767-217.webp" alt="" loading="lazy" decoding="async" data-fy="3596" data-fh="199" style="left:calc(40 * var(--u));top:calc(3596 * var(--u) + var(--dy, 0px));width:calc(265 * var(--u));height:calc(199 * var(--u) + var(--dh, 0px));z-index:3">
+<img class="l intro i-vline" src="img/4767-220.webp" alt="" fetchpriority="high" decoding="async" data-fy="85" data-fh="271" style="left:calc(103 * var(--u));top:calc(85 * var(--u) + var(--dy, 0px));width:calc(0.5 * var(--u));height:calc(271 * var(--u) + var(--dh, 0px));z-index:4;--t:0.10s">
+<img class="l intro i-vline" src="img/4767-221.webp" alt="" fetchpriority="high" decoding="async" data-fy="85" data-fh="271" style="left:calc(317 * var(--u));top:calc(85 * var(--u) + var(--dy, 0px));width:calc(0.5 * var(--u));height:calc(271 * var(--u) + var(--dh, 0px));z-index:5;--t:0.17s">
+<img class="l intro i-hline" src="img/4767-223.webp" alt="" fetchpriority="high" decoding="async" data-fy="125" data-fh="0.5" style="left:calc(29 * var(--u));top:calc(125 * var(--u) + var(--dy, 0px));width:calc(362 * var(--u));height:calc(0.5 * var(--u) + var(--dh, 0px));z-index:6;--t:0.15s">
+<img class="l intro i-hline" src="img/4767-224.webp" alt="" fetchpriority="high" decoding="async" data-fy="316" data-fh="0.5" style="left:calc(29 * var(--u));top:calc(316 * var(--u) + var(--dy, 0px));width:calc(362 * var(--u));height:calc(0.5 * var(--u) + var(--dh, 0px));z-index:7;--t:0.23s">
+<div class="t deco t-sat intro i-rise" data-fit data-fy="97" data-fh="14" style="left:calc(199 * var(--u));top:calc(97 * var(--u) + var(--dy, 0px));width:calc(35 * var(--u));z-index:8;--t:0.50s;text-align:left;font-family:'Gmarket', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;font-size:calc(12 * var(--u));line-height:1.15;letter-spacing:0.0em;color:rgb(0, 0, 0)"><span>sat</span></div>
+<div class="t deco t-fri intro i-rise" data-fit data-fy="97" data-fh="14" style="left:calc(29 * var(--u));top:calc(97 * var(--u) + var(--dy, 0px));width:calc(28 * var(--u));z-index:9;--t:0.42s;text-align:left;font-family:'Gmarket', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;font-size:calc(12 * var(--u));line-height:1.15;letter-spacing:0.0em;color:rgb(0, 0, 0)"><span>fri</span></div>
+<div class="t deco t-sun intro i-rise" data-fit data-fy="97" data-fh="14" style="left:calc(367 * var(--u));top:calc(97 * var(--u) + var(--dy, 0px));width:calc(38 * var(--u));z-index:10;--t:0.57s;text-align:left;font-family:'Gmarket', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;font-size:calc(12 * var(--u));line-height:1.15;letter-spacing:0.0em;color:rgb(0, 0, 0)"><span>sun</span></div>
+<img class="l intro i-lace" src="img/4767-228.webp" alt="" fetchpriority="high" decoding="async" data-fy="108" data-fh="225" style="left:calc(79 * var(--u));top:calc(108 * var(--u) + var(--dy, 0px));width:calc(262 * var(--u));height:calc(225 * var(--u) + var(--dh, 0px));z-index:11;--t:0.55s">
+<img class="l tap intro i-drop" src="img/4767-229.webp" alt="" fetchpriority="high" decoding="async" data-fy="232" data-fh="84" style="left:calc(265 * var(--u));top:calc(232 * var(--u) + var(--dy, 0px));width:calc(87 * var(--u));height:calc(84 * var(--u) + var(--dh, 0px));z-index:12;--t:1.15s">
+<img class="l tap intro i-drop" src="img/4767-230.webp" alt="" fetchpriority="high" decoding="async" data-fy="119" data-fh="73.5" style="left:calc(90 * var(--u));top:calc(119 * var(--u) + var(--dy, 0px));width:calc(73.5 * var(--u));height:calc(73.5 * var(--u) + var(--dh, 0px));z-index:13;--t:1.00s">
+<div class="t deco t-title intro i-rise" data-fit data-fy="180" data-fh="40" style="left:calc(148 * var(--u));top:calc(180 * var(--u) + var(--dy, 0px));width:calc(135 * var(--u));z-index:14;--t:0.85s;text-align:center;font-family:'Griun', 'Gaegu', 'Apple SD Gothic Neo', sans-serif;font-size:calc(32 * var(--u));line-height:1.25;letter-spacing:-0.02em;color:rgb(50, 50, 50)"><span>윤종구 조인하
+결혼합니다</span></div>
+<img class="l" src="img/4767-232.webp" alt="" loading="lazy" decoding="async" data-fy="3937" data-fh="564" style="left:calc(0 * var(--u));top:calc(3937 * var(--u) + var(--dy, 0px));width:calc(420 * var(--u));height:calc(564 * var(--u) + var(--dh, 0px));z-index:15">
+<img class="l" src="img/4767-233.webp" alt="" loading="lazy" decoding="async" data-fy="2214" data-fh="656" style="left:calc(0 * var(--u));top:calc(2214 * var(--u) + var(--dy, 0px));width:calc(420 * var(--u));height:calc(656 * var(--u) + var(--dh, 0px));z-index:16">
+<div class="l paper9" data-fy="5447" data-fh="468" aria-hidden="true" style="left:calc(0 * var(--u));top:calc(5447 * var(--u) + var(--dy, 0px));width:calc(420 * var(--u));height:calc(468 * var(--u) + var(--dh, 0px));z-index:17;border-image-source:url(img/4767-234.webp);border-image-slice:281 0 281 0 fill;border-image-width:calc(140.5 * var(--u)) 0 calc(140.5 * var(--u)) 0"></div>
+<img class="l sway sway-right" src="img/4767-235.webp" alt="" loading="lazy" decoding="async" data-fy="1410" data-fh="292" style="left:calc(163 * var(--u));top:calc(1410 * var(--u) + var(--dy, 0px));width:calc(257 * var(--u));height:calc(292 * var(--u) + var(--dh, 0px));z-index:18">
+<img class="l sway sway-left" src="img/4767-236.webp" alt="" loading="lazy" decoding="async" data-fy="1669" data-fh="251.5" style="left:calc(0 * var(--u));top:calc(1669 * var(--u) + var(--dy, 0px));width:calc(268 * var(--u));height:calc(251.5 * var(--u) + var(--dh, 0px));z-index:19">
+<img class="l intro i-paper" src="img/4767-237.webp" alt="" fetchpriority="high" decoding="async" data-fy="392" data-fh="146" style="left:calc(34 * var(--u));top:calc(392 * var(--u) + var(--dy, 0px));width:calc(352 * var(--u));height:calc(146 * var(--u) + var(--dh, 0px));z-index:20;--t:1.50s">
+<img class="l pop tap" src="img/4767-238.webp" alt="" decoding="async" data-fy="720" data-fh="281" style="left:calc(45 * var(--u));top:calc(720 * var(--u) + var(--dy, 0px));width:calc(217.5 * var(--u));height:calc(281 * var(--u) + var(--dh, 0px));z-index:21">
+<img class="l pop tap" src="img/4767-239.webp" alt="" decoding="async" data-fy="742.6" data-fh="309.5" style="left:calc(166.1 * var(--u));top:calc(742.6 * var(--u) + var(--dy, 0px));width:calc(245.5 * var(--u));height:calc(309.5 * var(--u) + var(--dh, 0px));z-index:22">
+<img class="l tile" src="img/4767-244.webp" alt="" decoding="async" data-fy="978" data-fh="30" style="left:calc(260 * var(--u));top:calc(978 * var(--u) + var(--dy, 0px));width:calc(30 * var(--u));height:calc(30 * var(--u) + var(--dh, 0px));z-index:23;--i:6">
+<img class="l tile" src="img/4767-245.webp" alt="" decoding="async" data-fy="972" data-fh="30" style="left:calc(306 * var(--u));top:calc(972 * var(--u) + var(--dy, 0px));width:calc(30 * var(--u));height:calc(30 * var(--u) + var(--dh, 0px));z-index:24;--i:8">
+<img class="l tile" src="img/4767-246.webp" alt="" decoding="async" data-fy="972" data-fh="30" style="left:calc(328 * var(--u));top:calc(972 * var(--u) + var(--dy, 0px));width:calc(30 * var(--u));height:calc(30 * var(--u) + var(--dh, 0px));z-index:25;--i:9">
+<img class="l tile" src="img/4767-247.webp" alt="" decoding="async" data-fy="980" data-fh="25" style="left:calc(286 * var(--u));top:calc(980 * var(--u) + var(--dy, 0px));width:calc(25 * var(--u));height:calc(25 * var(--u) + var(--dh, 0px));z-index:26;--i:7">
+<img class="l tile" src="img/4767-248.webp" alt="" decoding="async" data-fy="944" data-fh="24" style="left:calc(127 * var(--u));top:calc(944 * var(--u) + var(--dy, 0px));width:calc(24 * var(--u));height:calc(24 * var(--u) + var(--dh, 0px));z-index:27;--i:2">
+<img class="l tile" src="img/4767-249.webp" alt="" decoding="async" data-fy="944" data-fh="30" style="left:calc(143 * var(--u));top:calc(944 * var(--u) + var(--dy, 0px));width:calc(30 * var(--u));height:calc(30 * var(--u) + var(--dh, 0px));z-index:28;--i:3">
+<img class="l tile" src="img/4767-250.webp" alt="" decoding="async" data-fy="944" data-fh="30" style="left:calc(163 * var(--u));top:calc(944 * var(--u) + var(--dy, 0px));width:calc(30 * var(--u));height:calc(30 * var(--u) + var(--dh, 0px));z-index:29;--i:4">
+<img class="l tile" src="img/4767-251.webp" alt="" decoding="async" data-fy="936" data-fh="30" style="left:calc(84 * var(--u));top:calc(936 * var(--u) + var(--dy, 0px));width:calc(30 * var(--u));height:calc(30 * var(--u) + var(--dh, 0px));z-index:30;--i:0">
+<img class="l tile" src="img/4767-252.webp" alt="" decoding="async" data-fy="944" data-fh="25" style="left:calc(106 * var(--u));top:calc(944 * var(--u) + var(--dy, 0px));width:calc(25 * var(--u));height:calc(25 * var(--u) + var(--dh, 0px));z-index:31;--i:1">
+<img class="l tile" src="img/4767-253.webp" alt="" decoding="async" data-fy="949" data-fh="23" style="left:calc(187 * var(--u));top:calc(949 * var(--u) + var(--dy, 0px));width:calc(23 * var(--u));height:calc(23 * var(--u) + var(--dh, 0px));z-index:32;--i:5">
+<img class="l" src="img/4767-254.webp" alt="" decoding="async" data-fy="1052" data-fh="302" style="left:calc(0 * var(--u));top:calc(1052 * var(--u) + var(--dy, 0px));width:calc(420 * var(--u));height:calc(302 * var(--u) + var(--dh, 0px));z-index:33">
+<img class="l pop tap" src="img/4767-255.webp" alt="" decoding="async" data-fy="1068" data-fh="65.5" style="left:calc(170 * var(--u));top:calc(1068 * var(--u) + var(--dy, 0px));width:calc(129 * var(--u));height:calc(65.5 * var(--u) + var(--dh, 0px));z-index:34">
+<img class="l pop tap" src="img/4767-256.webp" alt="" decoding="async" data-fy="1294" data-fh="45" style="left:calc(44 * var(--u));top:calc(1294 * var(--u) + var(--dy, 0px));width:calc(44 * var(--u));height:calc(45 * var(--u) + var(--dh, 0px));z-index:35">
+<img class="l" src="img/4767-257.webp" alt="" decoding="async" data-fy="970" data-fh="90" style="left:calc(71.2 * var(--u));top:calc(970 * var(--u) + var(--dy, 0px));width:calc(25.5 * var(--u));height:calc(90 * var(--u) + var(--dh, 0px));z-index:36">
+<img class="l" src="img/4767-258.webp" alt="" decoding="async" data-fy="1055" data-fh="8" style="left:calc(93 * var(--u));top:calc(1055 * var(--u) + var(--dy, 0px));width:calc(7.5 * var(--u));height:calc(8 * var(--u) + var(--dh, 0px));z-index:37">
+<img class="l" src="img/4767-260.webp" alt="" loading="lazy" decoding="async" data-fy="1532" data-fh="163" style="left:calc(250 * var(--u));top:calc(1532 * var(--u) + var(--dy, 0px));width:calc(114 * var(--u));height:calc(163 * var(--u) + var(--dh, 0px));z-index:38">
+<img class="l pop" src="img/4767-261.webp" alt="" loading="lazy" decoding="async" data-fy="1536.8" data-fh="158.5" style="left:calc(256 * var(--u));top:calc(1536.8 * var(--u) + var(--dy, 0px));width:calc(105 * var(--u));height:calc(158.5 * var(--u) + var(--dh, 0px));z-index:39">
+<div class="t deco t-date intro i-type" data-fit data-fy="433" data-fh="32" style="left:calc(87 * var(--u));top:calc(433 * var(--u) + var(--dy, 0px));width:calc(257 * var(--u));z-index:40;--t:1.80s;text-align:left;font-family:'Gowun Dodum', 'Gowun', 'Apple SD Gothic Neo', sans-serif;font-size:calc(22 * var(--u));line-height:1.45;letter-spacing:0.0em;color:rgba(0,0,0,.76)"><span>2026. 12. 19 토요일 12:30</span></div>
+<div class="t deco t-venue_top intro i-rise" data-fit data-fy="465" data-fh="23" style="left:calc(141 * var(--u));top:calc(465 * var(--u) + var(--dy, 0px));width:calc(148 * var(--u));z-index:41;--t:2.27s;text-align:left;font-family:'Gowun Dodum', 'Gowun', 'Apple SD Gothic Neo', sans-serif;font-size:calc(16 * var(--u));line-height:1.45;letter-spacing:0.0em;color:rgba(0,0,0,.76)"><span>청주 리움웨딩컨벤션</span></div>
+<img class="l" src="img/4767-266.webp" alt="" loading="lazy" decoding="async" data-fy="1716.9" data-fh="168.5" style="left:calc(18 * var(--u));top:calc(1716.9 * var(--u) + var(--dy, 0px));width:calc(140 * var(--u));height:calc(168.5 * var(--u) + var(--dh, 0px));z-index:42">
+<img class="l pop" src="img/4767-267.webp" alt="" loading="lazy" decoding="async" data-fy="1713.8" data-fh="171.5" style="left:calc(26 * var(--u));top:calc(1713.8 * var(--u) + var(--dy, 0px));width:calc(131.5 * var(--u));height:calc(171.5 * var(--u) + var(--dh, 0px));z-index:43">
+<img class="l pop tap quick" src="img/4767-268.webp" alt="" loading="lazy" decoding="async" data-fy="1623.7" data-fh="80.6" style="left:calc(58.7 * var(--u));top:calc(1623.7 * var(--u) + var(--dy, 0px));width:calc(248.6 * var(--u));height:calc(80.6 * var(--u) + var(--dh, 0px));z-index:44">
+<div class="t deco t-bride_parents pop tx" data-fit data-fy="1650" data-fh="28" style="left:calc(102 * var(--u));top:calc(1650 * var(--u) + var(--dy, 0px));width:calc(162 * var(--u));z-index:45;text-align:center;font-family:'Griun', 'Gaegu', 'Apple SD Gothic Neo', sans-serif;font-size:calc(20 * var(--u));line-height:1.4;letter-spacing:-0.02em;color:rgb(50, 50, 50)"><span>조용태 • 이재화의 딸</span></div>
+<img class="l pop tap quick" src="img/4767-270.webp" alt="" loading="lazy" decoding="async" data-fy="1769.9" data-fh="73.1" style="left:calc(121.7 * var(--u));top:calc(1769.9 * var(--u) + var(--dy, 0px));width:calc(229.6 * var(--u));height:calc(73.1 * var(--u) + var(--dh, 0px));z-index:46">
+<div class="t deco t-groom_parents pop tx" data-fit data-fy="1795" data-fh="28" style="left:calc(157.5 * var(--u));top:calc(1795 * var(--u) + var(--dy, 0px));width:calc(158 * var(--u));z-index:47;text-align:center;font-family:'Griun', 'Gaegu', 'Apple SD Gothic Neo', sans-serif;font-size:calc(20 * var(--u));line-height:1.4;letter-spacing:-0.02em;color:rgb(50, 50, 50)"><span>윤종원 • 김연순의 아들</span></div>
+<img class="l sway sway-top" src="img/4767-272.webp" alt="" fetchpriority="high" decoding="async" data-fy="662" data-fh="325" style="left:calc(0 * var(--u));top:calc(662 * var(--u) + var(--dy, 0px));width:calc(420 * var(--u));height:calc(325 * var(--u) + var(--dh, 0px));z-index:48">
+<img class="l pop tap" src="img/4767-273.webp" alt="" decoding="async" data-fy="1260" data-fh="203" style="left:calc(108 * var(--u));top:calc(1260 * var(--u) + var(--dy, 0px));width:calc(312 * var(--u));height:calc(203 * var(--u) + var(--dh, 0px));z-index:49">
+<img class="l" src="img/4767-274.webp" alt="" loading="lazy" decoding="async" data-fy="1425" data-fh="36.5" style="left:calc(343.5 * var(--u));top:calc(1425 * var(--u) + var(--dy, 0px));width:calc(30.5 * var(--u));height:calc(36.5 * var(--u) + var(--dh, 0px));z-index:50">
+<img class="l pop tap" src="img/4767-275.webp" alt="" decoding="async" data-fy="1280" data-fh="42" style="left:calc(358 * var(--u));top:calc(1280 * var(--u) + var(--dy, 0px));width:calc(42 * var(--u));height:calc(42 * var(--u) + var(--dh, 0px));z-index:51">
+<img class="l tap intro i-drop" src="img/4767-276.webp" alt="" fetchpriority="high" decoding="async" data-fy="378" data-fh="76" style="left:calc(7 * var(--u));top:calc(378 * var(--u) + var(--dy, 0px));width:calc(136 * var(--u));height:calc(76 * var(--u) + var(--dh, 0px));z-index:52;--t:1.73s">
+<img class="l tap intro i-drop" src="img/4767-277.webp" alt="" fetchpriority="high" decoding="async" data-fy="464" data-fh="99" style="left:calc(304 * var(--u));top:calc(464 * var(--u) + var(--dy, 0px));width:calc(87 * var(--u));height:calc(99 * var(--u) + var(--dh, 0px));z-index:53;--t:2.45s">
+<img class="l pop photo tap" src="img/4767-278.webp" alt="" loading="lazy" decoding="async" data-fy="3028" data-fh="266" style="left:calc(10 * var(--u));top:calc(3028 * var(--u) + var(--dy, 0px));width:calc(399 * var(--u));height:calc(266 * var(--u) + var(--dh, 0px));z-index:54">
+<img class="l" src="img/4767-280.webp" alt="" loading="lazy" decoding="async" data-fy="3247" data-fh="220" style="left:calc(16 * var(--u));top:calc(3247 * var(--u) + var(--dy, 0px));width:calc(279 * var(--u));height:calc(220 * var(--u) + var(--dh, 0px));z-index:55">
+<img class="l ink" src="img/4776-1991.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3385.1" data-fh="11" style="left:calc(119.8 * var(--u));top:calc(3385.1 * var(--u) + var(--dy, 0px));width:calc(14.5 * var(--u));height:calc(11 * var(--u) + var(--dh, 0px));z-index:56;--i:17">
+<img class="l ink" src="img/4776-1992.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3378.9" data-fh="2.5" style="left:calc(163.9 * var(--u));top:calc(3378.9 * var(--u) + var(--dy, 0px));width:calc(3 * var(--u));height:calc(2.5 * var(--u) + var(--dh, 0px));z-index:57;--i:22">
+<img class="l ink" src="img/4776-1993.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3339.9" data-fh="2.5" style="left:calc(206.9 * var(--u));top:calc(3339.9 * var(--u) + var(--dy, 0px));width:calc(3 * var(--u));height:calc(2.5 * var(--u) + var(--dh, 0px));z-index:58;--i:13">
+<img class="l ink" src="img/4776-1994.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3383" data-fh="14" style="left:calc(165.7 * var(--u));top:calc(3383 * var(--u) + var(--dy, 0px));width:calc(2.5 * var(--u));height:calc(14 * var(--u) + var(--dh, 0px));z-index:59;--i:23">
+<img class="l ink" src="img/4776-1995.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3380.9" data-fh="12.5" style="left:calc(173 * var(--u));top:calc(3380.9 * var(--u) + var(--dy, 0px));width:calc(12 * var(--u));height:calc(12.5 * var(--u) + var(--dh, 0px));z-index:60;--i:24">
+<img class="l ink" src="img/4776-1996.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3375" data-fh="17" style="left:calc(187.9 * var(--u));top:calc(3375 * var(--u) + var(--dy, 0px));width:calc(15.5 * var(--u));height:calc(17 * var(--u) + var(--dh, 0px));z-index:61;--i:25">
+<img class="l ink" src="img/4776-1997.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3379" data-fh="19.5" style="left:calc(209.8 * var(--u));top:calc(3379 * var(--u) + var(--dy, 0px));width:calc(17.5 * var(--u));height:calc(19.5 * var(--u) + var(--dh, 0px));z-index:62;--i:26">
+<img class="l ink" src="img/4776-1998.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3351.9" data-fh="11.5" style="left:calc(94.9 * var(--u));top:calc(3351.9 * var(--u) + var(--dy, 0px));width:calc(14 * var(--u));height:calc(11.5 * var(--u) + var(--dh, 0px));z-index:63;--i:1">
+<img class="l ink" src="img/4776-1999.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3342" data-fh="6.5" style="left:calc(107.1 * var(--u));top:calc(3342 * var(--u) + var(--dy, 0px));width:calc(4 * var(--u));height:calc(6.5 * var(--u) + var(--dh, 0px));z-index:64;--i:2">
+<img class="l ink" src="img/4776-2000.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3350.9" data-fh="12.5" style="left:calc(126.9 * var(--u));top:calc(3350.9 * var(--u) + var(--dy, 0px));width:calc(12.5 * var(--u));height:calc(12.5 * var(--u) + var(--dh, 0px));z-index:65;--i:5">
+<img class="l ink" src="img/4776-2001.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3341" data-fh="24.5" style="left:calc(70.9 * var(--u));top:calc(3341 * var(--u) + var(--dy, 0px));width:calc(24.5 * var(--u));height:calc(24.5 * var(--u) + var(--dh, 0px));z-index:66;--i:0">
+<img class="l ink" src="img/4776-2002.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3379" data-fh="23" style="left:calc(93.9 * var(--u));top:calc(3379 * var(--u) + var(--dy, 0px));width:calc(25 * var(--u));height:calc(23 * var(--u) + var(--dh, 0px));z-index:67;--i:16">
+<img class="l ink" src="img/4776-2003.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3351" data-fh="15" style="left:calc(113.9 * var(--u));top:calc(3351 * var(--u) + var(--dy, 0px));width:calc(3.5 * var(--u));height:calc(15 * var(--u) + var(--dh, 0px));z-index:68;--i:3">
+<img class="l ink" src="img/4776-2004.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3348.9" data-fh="18.5" style="left:calc(114.9 * var(--u));top:calc(3348.9 * var(--u) + var(--dy, 0px));width:calc(14.5 * var(--u));height:calc(18.5 * var(--u) + var(--dh, 0px));z-index:69;--i:4">
+<img class="l ink" src="img/4776-2005.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3345.2" data-fh="22" style="left:calc(147.9 * var(--u));top:calc(3345.2 * var(--u) + var(--dy, 0px));width:calc(11.5 * var(--u));height:calc(22 * var(--u) + var(--dh, 0px));z-index:70;--i:6">
+<img class="l ink" src="img/4776-2006.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3347" data-fh="13.5" style="left:calc(161.9 * var(--u));top:calc(3347 * var(--u) + var(--dy, 0px));width:calc(15.5 * var(--u));height:calc(13.5 * var(--u) + var(--dh, 0px));z-index:71;--i:7">
+<img class="l ink" src="img/4776-2007.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3344.9" data-fh="5.5" style="left:calc(177.9 * var(--u));top:calc(3344.9 * var(--u) + var(--dy, 0px));width:calc(12.5 * var(--u));height:calc(5.5 * var(--u) + var(--dh, 0px));z-index:72;--i:8">
+<img class="l ink" src="img/4776-2008.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3337" data-fh="22" style="left:calc(180.9 * var(--u));top:calc(3337 * var(--u) + var(--dy, 0px));width:calc(6.5 * var(--u));height:calc(22 * var(--u) + var(--dh, 0px));z-index:73;--i:9">
+<img class="l ink" src="img/4776-2009.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3347" data-fh="4" style="left:calc(191.9 * var(--u));top:calc(3347 * var(--u) + var(--dy, 0px));width:calc(13 * var(--u));height:calc(4 * var(--u) + var(--dh, 0px));z-index:74;--i:10">
+<img class="l ink" src="img/4776-2010.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3336" data-fh="23" style="left:calc(193.9 * var(--u));top:calc(3336 * var(--u) + var(--dy, 0px));width:calc(5.5 * var(--u));height:calc(23 * var(--u) + var(--dh, 0px));z-index:75;--i:11">
+<img class="l ink" src="img/4776-2011.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3346" data-fh="11" style="left:calc(206.8 * var(--u));top:calc(3346 * var(--u) + var(--dy, 0px));width:calc(2.5 * var(--u));height:calc(11 * var(--u) + var(--dh, 0px));z-index:76;--i:12">
+<img class="l ink" src="img/4776-2012.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3346" data-fh="15" style="left:calc(213.9 * var(--u));top:calc(3346 * var(--u) + var(--dy, 0px));width:calc(11.5 * var(--u));height:calc(15 * var(--u) + var(--dh, 0px));z-index:77;--i:14">
+<img class="l ink" src="img/4776-2013.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3343.1" data-fh="25.5" style="left:calc(226.9 * var(--u));top:calc(3343.1 * var(--u) + var(--dy, 0px));width:calc(10.5 * var(--u));height:calc(25.5 * var(--u) + var(--dh, 0px));z-index:78;--i:15">
+<img class="l ink" src="img/4776-2014.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3381" data-fh="16" style="left:calc(134.9 * var(--u));top:calc(3381 * var(--u) + var(--dy, 0px));width:calc(4.5 * var(--u));height:calc(16 * var(--u) + var(--dh, 0px));z-index:79;--i:18">
+<img class="l ink" src="img/4776-2015.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3379.9" data-fh="19.5" style="left:calc(135.9 * var(--u));top:calc(3379.9 * var(--u) + var(--dy, 0px));width:calc(13.5 * var(--u));height:calc(19.5 * var(--u) + var(--dh, 0px));z-index:80;--i:19">
+<img class="l ink" src="img/4776-2016.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3379" data-fh="17" style="left:calc(147.8 * var(--u));top:calc(3379 * var(--u) + var(--dy, 0px));width:calc(4.5 * var(--u));height:calc(17 * var(--u) + var(--dh, 0px));z-index:81;--i:20">
+<img class="l ink" src="img/4776-2017.webp" alt="" loading="lazy" decoding="async" data-ink="g1" data-fy="3376.9" data-fh="22.5" style="left:calc(147.9 * var(--u));top:calc(3376.9 * var(--u) + var(--dy, 0px));width:calc(16.5 * var(--u));height:calc(22.5 * var(--u) + var(--dh, 0px));z-index:82;--i:21">
+<img class="l pop photo tap" src="img/4767-308.webp" alt="" loading="lazy" decoding="async" data-fy="3768.6" data-fh="265.5" style="left:calc(0 * var(--u));top:calc(3768.6 * var(--u) + var(--dy, 0px));width:calc(175 * var(--u));height:calc(265.5 * var(--u) + var(--dh, 0px));z-index:83">
+<img class="l sway sway-left" src="img/4767-309.webp" alt="" loading="lazy" decoding="async" data-fy="2918.9" data-fh="219" style="left:calc(0 * var(--u));top:calc(2918.9 * var(--u) + var(--dy, 0px));width:calc(208.5 * var(--u));height:calc(219 * var(--u) + var(--dh, 0px));z-index:84">
+<img class="l pop photo tap" src="img/4767-310.webp" alt="" loading="lazy" decoding="async" data-fy="4318" data-fh="305" style="left:calc(22 * var(--u));top:calc(4318 * var(--u) + var(--dy, 0px));width:calc(230 * var(--u));height:calc(305 * var(--u) + var(--dh, 0px));z-index:85">
+<img class="l pop photo tap" src="img/4767-311.webp" alt="" loading="lazy" decoding="async" data-fy="3392" data-fh="167" style="left:calc(243 * var(--u));top:calc(3392 * var(--u) + var(--dy, 0px));width:calc(143 * var(--u));height:calc(167 * var(--u) + var(--dh, 0px));z-index:86">
+<img class="l pop tap" src="img/4767-313.webp" alt="" loading="lazy" decoding="async" data-fy="4526" data-fh="183" style="left:calc(184 * var(--u));top:calc(4526 * var(--u) + var(--dy, 0px));width:calc(193 * var(--u));height:calc(183 * var(--u) + var(--dh, 0px));z-index:87">
+<img class="l ink" src="img/4767-314.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4587" data-fh="18.5" style="left:calc(235 * var(--u));top:calc(4587 * var(--u) + var(--dy, 0px));width:calc(10.5 * var(--u));height:calc(18.5 * var(--u) + var(--dh, 0px));z-index:88;--i:0">
+<img class="l ink" src="img/4767-315.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4587" data-fh="11.5" style="left:calc(249 * var(--u));top:calc(4587 * var(--u) + var(--dy, 0px));width:calc(7 * var(--u));height:calc(11.5 * var(--u) + var(--dh, 0px));z-index:89;--i:1">
+<img class="l ink" src="img/4767-316.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4588" data-fh="16" style="left:calc(257.9 * var(--u));top:calc(4588 * var(--u) + var(--dy, 0px));width:calc(9.5 * var(--u));height:calc(16 * var(--u) + var(--dh, 0px));z-index:90;--i:2">
+<img class="l ink" src="img/4767-317.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4584" data-fh="19.5" style="left:calc(275.9 * var(--u));top:calc(4584 * var(--u) + var(--dy, 0px));width:calc(13.5 * var(--u));height:calc(19.5 * var(--u) + var(--dh, 0px));z-index:91;--i:3">
+<img class="l ink" src="img/4767-318.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4589.9" data-fh="16.5" style="left:calc(294.8 * var(--u));top:calc(4589.9 * var(--u) + var(--dy, 0px));width:calc(17.5 * var(--u));height:calc(16.5 * var(--u) + var(--dh, 0px));z-index:92;--i:4">
+<img class="l ink" src="img/4767-319.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4588.9" data-fh="11.5" style="left:calc(315 * var(--u));top:calc(4588.9 * var(--u) + var(--dy, 0px));width:calc(12.5 * var(--u));height:calc(11.5 * var(--u) + var(--dh, 0px));z-index:93;--i:5">
+<img class="l ink" src="img/4767-320.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4624.8" data-fh="9.5" style="left:calc(239.1 * var(--u));top:calc(4624.8 * var(--u) + var(--dy, 0px));width:calc(14 * var(--u));height:calc(9.5 * var(--u) + var(--dh, 0px));z-index:94;--i:6">
+<img class="l ink" src="img/4767-321.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4616" data-fh="21" style="left:calc(254.9 * var(--u));top:calc(4616 * var(--u) + var(--dy, 0px));width:calc(4.5 * var(--u));height:calc(21 * var(--u) + var(--dh, 0px));z-index:95;--i:7">
+<img class="l ink" src="img/4767-322.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4622" data-fh="11.5" style="left:calc(261 * var(--u));top:calc(4622 * var(--u) + var(--dy, 0px));width:calc(13.5 * var(--u));height:calc(11.5 * var(--u) + var(--dh, 0px));z-index:96;--i:8">
+<img class="l ink" src="img/4767-323.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4624.9" data-fh="9.5" style="left:calc(275.9 * var(--u));top:calc(4624.9 * var(--u) + var(--dy, 0px));width:calc(14.5 * var(--u));height:calc(9.5 * var(--u) + var(--dh, 0px));z-index:97;--i:9">
+<img class="l ink" src="img/4767-324.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4623.1" data-fh="19.5" style="left:calc(287.9 * var(--u));top:calc(4623.1 * var(--u) + var(--dy, 0px));width:calc(11.5 * var(--u));height:calc(19.5 * var(--u) + var(--dh, 0px));z-index:98;--i:10">
+<img class="l ink" src="img/4767-325.webp" alt="" loading="lazy" decoding="async" data-ink="g2" data-fy="4620.8" data-fh="14.5" style="left:calc(300 * var(--u));top:calc(4620.8 * var(--u) + var(--dy, 0px));width:calc(10.5 * var(--u));height:calc(14.5 * var(--u) + var(--dh, 0px));z-index:99;--i:11">
+<img class="l pop tap" src="img/4767-326.webp" alt="" loading="lazy" decoding="async" data-fy="3442" data-fh="84.5" style="left:calc(192 * var(--u));top:calc(3442 * var(--u) + var(--dy, 0px));width:calc(84.5 * var(--u));height:calc(84.5 * var(--u) + var(--dh, 0px));z-index:100">
+<img class="l pop tap" src="img/4767-327.webp" alt="" loading="lazy" decoding="async" data-fy="5553" data-fh="84" data-anchor=".info .info-h" data-afy="5564" style="left:calc(0 * var(--u));top:calc(5553 * var(--u) + var(--dy, 0px));width:calc(73 * var(--u));height:calc(84 * var(--u) + var(--dh, 0px));z-index:101">
+<img class="l pop tap" src="img/4767-328.webp" alt="" loading="lazy" decoding="async" data-fy="5718" data-fh="71" data-anchor=".info .shuttle-h" data-afy="5725" style="left:calc(13 * var(--u));top:calc(5718 * var(--u) + var(--dy, 0px));width:calc(60 * var(--u));height:calc(71 * var(--u) + var(--dh, 0px));z-index:102">
+<img class="l" src="img/4767-329.webp" alt="" decoding="async" data-fy="1004" data-fh="58.5" style="left:calc(327 * var(--u));top:calc(1004 * var(--u) + var(--dy, 0px));width:calc(25 * var(--u));height:calc(58.5 * var(--u) + var(--dh, 0px));z-index:103">
+<img class="l" src="img/4767-330.webp" alt="" decoding="async" data-fy="1055" data-fh="11.5" style="left:calc(322.3 * var(--u));top:calc(1055 * var(--u) + var(--dy, 0px));width:calc(7.5 * var(--u));height:calc(11.5 * var(--u) + var(--dh, 0px));z-index:104">
+<img class="l pop tap" src="img/4767-331.webp" alt="" loading="lazy" decoding="async" data-fy="6020" data-fh="227" style="left:calc(299 * var(--u));top:calc(6020 * var(--u) + var(--dy, 0px));width:calc(110 * var(--u));height:calc(227 * var(--u) + var(--dh, 0px));z-index:105">
+<img class="l sway sway-left" src="img/4767-332.webp" alt="" loading="lazy" decoding="async" data-fy="4025" data-fh="257" style="left:calc(0 * var(--u));top:calc(4025 * var(--u) + var(--dy, 0px));width:calc(173.5 * var(--u));height:calc(257 * var(--u) + var(--dh, 0px));z-index:106">
+<img class="l pop tap" src="img/4767-334.webp" alt="" loading="lazy" decoding="async" data-fy="6833" data-fh="71" style="left:calc(169 * var(--u));top:calc(6833 * var(--u) + var(--dy, 0px));width:calc(71 * var(--u));height:calc(71 * var(--u) + var(--dh, 0px));z-index:107">
+<img class="l pop tap" src="img/4767-335.webp" alt="" loading="lazy" decoding="async" data-fy="3878" data-fh="79" style="left:calc(213 * var(--u));top:calc(3878 * var(--u) + var(--dy, 0px));width:calc(163 * var(--u));height:calc(79 * var(--u) + var(--dh, 0px));z-index:108">
+<img class="l sway sway-right" src="img/4767-336.webp" alt="" loading="lazy" decoding="async" data-fy="3769" data-fh="180.5" style="left:calc(243 * var(--u));top:calc(3769 * var(--u) + var(--dy, 0px));width:calc(191 * var(--u));height:calc(180.5 * var(--u) + var(--dh, 0px));z-index:109">
+<img class="l pop tap" src="img/4767-337.webp" alt="" loading="lazy" decoding="async" data-fy="4374" data-fh="120" style="left:calc(255 * var(--u));top:calc(4374 * var(--u) + var(--dy, 0px));width:calc(160 * var(--u));height:calc(120 * var(--u) + var(--dh, 0px));z-index:110">
+<img class="l pop tap" src="img/4767-342.webp" alt="" loading="lazy" decoding="async" data-fy="6155" data-fh="132.5" style="left:calc(291 * var(--u));top:calc(6155 * var(--u) + var(--dy, 0px));width:calc(129 * var(--u));height:calc(132.5 * var(--u) + var(--dh, 0px));z-index:111;mix-blend-mode:multiply">
+<img class="l pop tap" src="img/4767-343.webp" alt="" loading="lazy" decoding="async" data-fy="1854" data-fh="32" style="left:calc(181 * var(--u));top:calc(1854 * var(--u) + var(--dy, 0px));width:calc(32 * var(--u));height:calc(32 * var(--u) + var(--dh, 0px));z-index:112">
+<img class="l pop tap" src="img/4767-344.webp" alt="" loading="lazy" decoding="async" data-fy="1596" data-fh="59.5" style="left:calc(33 * var(--u));top:calc(1596 * var(--u) + var(--dy, 0px));width:calc(59.5 * var(--u));height:calc(59.5 * var(--u) + var(--dh, 0px));z-index:113">
+<img class="l pop tap" src="img/4767-345.webp" alt="" loading="lazy" decoding="async" data-fy="1547" data-fh="35" style="left:calc(126 * var(--u));top:calc(1547 * var(--u) + var(--dy, 0px));width:calc(35 * var(--u));height:calc(35 * var(--u) + var(--dh, 0px));z-index:114">
+<img class="l" src="img/4767-347.webp" alt="" loading="lazy" decoding="async" data-fy="1853.9" data-fh="130.5" style="left:calc(290.8 * var(--u));top:calc(1853.9 * var(--u) + var(--dy, 0px));width:calc(87 * var(--u));height:calc(130.5 * var(--u) + var(--dh, 0px));z-index:115">
+<img class="l pop tap" src="img/4767-348.webp" alt="" loading="lazy" decoding="async" data-fy="1834" data-fh="152" style="left:calc(272 * var(--u));top:calc(1834 * var(--u) + var(--dy, 0px));width:calc(114 * var(--u));height:calc(152 * var(--u) + var(--dh, 0px));z-index:116">
+<img class="l pop tap" src="img/4767-349.webp" alt="" loading="lazy" decoding="async" data-fy="1960" data-fh="35.8" style="left:calc(273 * var(--u));top:calc(1960 * var(--u) + var(--dy, 0px));width:calc(66 * var(--u));height:calc(35.8 * var(--u) + var(--dh, 0px));z-index:117">
+<img class="l pop tap" src="img/4767-350.webp" alt="" loading="lazy" decoding="async" data-fy="1714" data-fh="54.5" style="left:calc(332 * var(--u));top:calc(1714 * var(--u) + var(--dy, 0px));width:calc(54.5 * var(--u));height:calc(54.5 * var(--u) + var(--dh, 0px));z-index:118">
+<img class="l pop photo tap" src="img/4767-351.webp" alt="" loading="lazy" decoding="async" data-fy="2718" data-fh="300.5" style="left:calc(0 * var(--u));top:calc(2718 * var(--u) + var(--dy, 0px));width:calc(236.5 * var(--u));height:calc(300.5 * var(--u) + var(--dh, 0px));z-index:119">
+<img class="l pop photo tap" src="img/4767-352.webp" alt="" loading="lazy" decoding="async" data-fy="2843.9" data-fh="160" style="left:calc(0 * var(--u));top:calc(2843.9 * var(--u) + var(--dy, 0px));width:calc(137.5 * var(--u));height:calc(160 * var(--u) + var(--dh, 0px));z-index:120">
+<img class="l pop" src="img/4767-353.webp" alt="" decoding="async" data-fy="1133" data-fh="161" style="left:calc(76 * var(--u));top:calc(1133 * var(--u) + var(--dy, 0px));width:calc(247 * var(--u));height:calc(161 * var(--u) + var(--dh, 0px));z-index:121">
+<img class="l pop tap" src="img/4767-354.webp" alt="" loading="lazy" decoding="async" data-fy="1921" data-fh="60.5" style="left:calc(97 * var(--u));top:calc(1921 * var(--u) + var(--dy, 0px));width:calc(60.5 * var(--u));height:calc(60.5 * var(--u) + var(--dh, 0px));z-index:122">
+<img class="l pop photo tap" src="img/4767-356.webp" alt="" loading="lazy" decoding="async" data-fy="3975" data-fh="381" style="left:calc(149 * var(--u));top:calc(3975 * var(--u) + var(--dy, 0px));width:calc(254 * var(--u));height:calc(381 * var(--u) + var(--dh, 0px));z-index:125">
+<img class="l pop tap" src="img/4767-358.webp" alt="" loading="lazy" decoding="async" data-fy="3571.2" data-fh="21" style="left:calc(210.2 * var(--u));top:calc(3571.2 * var(--u) + var(--dy, 0px));width:calc(21 * var(--u));height:calc(21 * var(--u) + var(--dh, 0px));z-index:126">
+<img class="l pop tap" src="img/4767-359.webp" alt="" loading="lazy" decoding="async" data-fy="3544.9" data-fh="21" style="left:calc(216.1 * var(--u));top:calc(3544.9 * var(--u) + var(--dy, 0px));width:calc(21 * var(--u));height:calc(21 * var(--u) + var(--dh, 0px));z-index:127">
+<img class="l pop tap" src="img/4767-360.webp" alt="" loading="lazy" decoding="async" data-fy="3536.7" data-fh="21" style="left:calc(236 * var(--u));top:calc(3536.7 * var(--u) + var(--dy, 0px));width:calc(21 * var(--u));height:calc(21 * var(--u) + var(--dh, 0px));z-index:128">
+<img class="l pop tap" src="img/4767-361.webp" alt="" loading="lazy" decoding="async" data-fy="3585" data-fh="21" style="left:calc(193.1 * var(--u));top:calc(3585 * var(--u) + var(--dy, 0px));width:calc(21 * var(--u));height:calc(21 * var(--u) + var(--dh, 0px));z-index:129">
+<img class="l pop photo tap" src="img/4767-362.webp" alt="" loading="lazy" decoding="async" data-fy="2527" data-fh="317" style="left:calc(198 * var(--u));top:calc(2527 * var(--u) + var(--dy, 0px));width:calc(211 * var(--u));height:calc(317 * var(--u) + var(--dh, 0px));z-index:130">
+<img class="l pop photo tap" src="img/4767-363.webp" alt="" loading="lazy" decoding="async" data-fy="2279" data-fh="227" style="left:calc(10 * var(--u));top:calc(2279 * var(--u) + var(--dy, 0px));width:calc(403 * var(--u));height:calc(227 * var(--u) + var(--dh, 0px));z-index:131">
+<img class="l pop tap" src="img/4767-365.webp" alt="" loading="lazy" decoding="async" data-fy="2087" data-fh="184" style="left:calc(121 * var(--u));top:calc(2087 * var(--u) + var(--dy, 0px));width:calc(184 * var(--u));height:calc(184 * var(--u) + var(--dh, 0px));z-index:132">
+<img class="l pop tap" src="img/4767-366.webp" alt="" loading="lazy" decoding="async" data-fy="2135.3" data-fh="154.5" style="left:calc(190.9 * var(--u));top:calc(2135.3 * var(--u) + var(--dy, 0px));width:calc(154.5 * var(--u));height:calc(154.5 * var(--u) + var(--dh, 0px));z-index:133">
+<img class="l ink" src="img/4767-367.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2150.3" data-fh="14.5" style="left:calc(162.9 * var(--u));top:calc(2150.3 * var(--u) + var(--dy, 0px));width:calc(12 * var(--u));height:calc(14.5 * var(--u) + var(--dh, 0px));z-index:134;--i:0">
+<img class="l ink" src="img/4767-368.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2153.9" data-fh="10" style="left:calc(177.5 * var(--u));top:calc(2153.9 * var(--u) + var(--dy, 0px));width:calc(13 * var(--u));height:calc(10 * var(--u) + var(--dh, 0px));z-index:135;--i:1">
+<img class="l ink" src="img/4767-369.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2149.6" data-fh="14.5" style="left:calc(191.4 * var(--u));top:calc(2149.6 * var(--u) + var(--dy, 0px));width:calc(4 * var(--u));height:calc(14.5 * var(--u) + var(--dh, 0px));z-index:136;--i:3">
+<img class="l ink" src="img/4767-370.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2147.3" data-fh="8.5" style="left:calc(191.4 * var(--u));top:calc(2147.3 * var(--u) + var(--dy, 0px));width:calc(8 * var(--u));height:calc(8.5 * var(--u) + var(--dh, 0px));z-index:137;--i:2">
+<img class="l ink" src="img/4767-371.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2153.2" data-fh="12" style="left:calc(193.2 * var(--u));top:calc(2153.2 * var(--u) + var(--dy, 0px));width:calc(15 * var(--u));height:calc(12 * var(--u) + var(--dh, 0px));z-index:138;--i:4">
+<img class="l ink" src="img/4767-372.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2149" data-fh="18.5" style="left:calc(217.8 * var(--u));top:calc(2149 * var(--u) + var(--dy, 0px));width:calc(12.5 * var(--u));height:calc(18.5 * var(--u) + var(--dh, 0px));z-index:139;--i:5">
+<img class="l ink" src="img/4767-373.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2151.8" data-fh="3.5" style="left:calc(231.1 * var(--u));top:calc(2151.8 * var(--u) + var(--dy, 0px));width:calc(3 * var(--u));height:calc(3.5 * var(--u) + var(--dh, 0px));z-index:140;--i:6">
+<img class="l ink" src="img/4767-374.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2156.6" data-fh="10" style="left:calc(232.1 * var(--u));top:calc(2156.6 * var(--u) + var(--dy, 0px));width:calc(3 * var(--u));height:calc(10 * var(--u) + var(--dh, 0px));z-index:141;--i:7">
+<img class="l ink" src="img/4767-375.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2152.3" data-fh="3" style="left:calc(237.1 * var(--u));top:calc(2152.3 * var(--u) + var(--dy, 0px));width:calc(10.5 * var(--u));height:calc(3 * var(--u) + var(--dh, 0px));z-index:142;--i:8">
+<img class="l ink" src="img/4767-376.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2146.7" data-fh="18.5" style="left:calc(240 * var(--u));top:calc(2146.7 * var(--u) + var(--dy, 0px));width:calc(6 * var(--u));height:calc(18.5 * var(--u) + var(--dh, 0px));z-index:143;--i:9">
+<img class="l ink" src="img/4767-377.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2152.9" data-fh="4.5" style="left:calc(246.1 * var(--u));top:calc(2152.9 * var(--u) + var(--dy, 0px));width:calc(13.5 * var(--u));height:calc(4.5 * var(--u) + var(--dh, 0px));z-index:144;--i:10">
+<img class="l ink" src="img/4767-378.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2147.3" data-fh="17.5" style="left:calc(252.1 * var(--u));top:calc(2147.3 * var(--u) + var(--dy, 0px));width:calc(5.5 * var(--u));height:calc(17.5 * var(--u) + var(--dh, 0px));z-index:145;--i:11">
+<img class="l ink" src="img/4767-379.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2147.8" data-fh="18" style="left:calc(260.5 * var(--u));top:calc(2147.8 * var(--u) + var(--dy, 0px));width:calc(3 * var(--u));height:calc(18 * var(--u) + var(--dh, 0px));z-index:146;--i:12">
+<img class="l ink" src="img/4767-380.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2152.6" data-fh="11" style="left:calc(267.1 * var(--u));top:calc(2152.6 * var(--u) + var(--dy, 0px));width:calc(13 * var(--u));height:calc(11 * var(--u) + var(--dh, 0px));z-index:147;--i:13">
+<img class="l ink" src="img/4767-381.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2173.9" data-fh="19.5" style="left:calc(152.4 * var(--u));top:calc(2173.9 * var(--u) + var(--dy, 0px));width:calc(15 * var(--u));height:calc(19.5 * var(--u) + var(--dh, 0px));z-index:148;--i:14">
+<img class="l ink" src="img/4767-382.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2173.3" data-fh="18.5" style="left:calc(164.9 * var(--u));top:calc(2173.3 * var(--u) + var(--dy, 0px));width:calc(9.5 * var(--u));height:calc(18.5 * var(--u) + var(--dh, 0px));z-index:149;--i:16">
+<img class="l ink" src="img/4767-383.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2181.8" data-fh="4" style="left:calc(157.2 * var(--u));top:calc(2181.8 * var(--u) + var(--dy, 0px));width:calc(16 * var(--u));height:calc(4 * var(--u) + var(--dh, 0px));z-index:150;--i:15">
+<img class="l ink" src="img/4767-384.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2178" data-fh="18" style="left:calc(175.7 * var(--u));top:calc(2178 * var(--u) + var(--dy, 0px));width:calc(5 * var(--u));height:calc(18 * var(--u) + var(--dh, 0px));z-index:151;--i:17">
+<img class="l ink" src="img/4767-385.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2176.5" data-fh="9" style="left:calc(175.8 * var(--u));top:calc(2176.5 * var(--u) + var(--dy, 0px));width:calc(8 * var(--u));height:calc(9 * var(--u) + var(--dh, 0px));z-index:152;--i:18">
+<img class="l ink" src="img/4767-386.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2182.2" data-fh="12" style="left:calc(178.8 * var(--u));top:calc(2182.2 * var(--u) + var(--dy, 0px));width:calc(14.5 * var(--u));height:calc(12 * var(--u) + var(--dh, 0px));z-index:153;--i:19">
+<img class="l ink" src="img/4767-387.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2182.1" data-fh="11.5" style="left:calc(193.8 * var(--u));top:calc(2182.1 * var(--u) + var(--dy, 0px));width:calc(10 * var(--u));height:calc(11.5 * var(--u) + var(--dh, 0px));z-index:154;--i:20">
+<img class="l ink" src="img/4767-388.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2173.9" data-fh="21" style="left:calc(208 * var(--u));top:calc(2173.9 * var(--u) + var(--dy, 0px));width:calc(10 * var(--u));height:calc(21 * var(--u) + var(--dh, 0px));z-index:155;--i:21">
+<img class="l ink" src="img/4767-389.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2176.8" data-fh="4" style="left:calc(219.4 * var(--u));top:calc(2176.8 * var(--u) + var(--dy, 0px));width:calc(4 * var(--u));height:calc(4 * var(--u) + var(--dh, 0px));z-index:156;--i:22">
+<img class="l ink" src="img/4767-390.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2182.6" data-fh="12" style="left:calc(220.6 * var(--u));top:calc(2182.6 * var(--u) + var(--dy, 0px));width:calc(3 * var(--u));height:calc(12 * var(--u) + var(--dh, 0px));z-index:157;--i:23">
+<img class="l ink" src="img/4767-391.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2178.5" data-fh="12.5" style="left:calc(226.8 * var(--u));top:calc(2178.5 * var(--u) + var(--dy, 0px));width:calc(10 * var(--u));height:calc(12.5 * var(--u) + var(--dh, 0px));z-index:158;--i:24">
+<img class="l ink" src="img/4767-392.webp" alt="" loading="lazy" decoding="async" data-ink="g3" data-fy="2180.8" data-fh="10.5" style="left:calc(237.7 * var(--u));top:calc(2180.8 * var(--u) + var(--dy, 0px));width:calc(17.5 * var(--u));height:calc(10.5 * var(--u) + var(--dh, 0px));z-index:159;--i:25">
+<img class="l pop tap" src="img/4767-393.webp" alt="" loading="lazy" decoding="async" data-fy="2212.9" data-fh="56" style="left:calc(229.6 * var(--u));top:calc(2212.9 * var(--u) + var(--dy, 0px));width:calc(64.5 * var(--u));height:calc(56 * var(--u) + var(--dh, 0px));z-index:160">
+<div class="dday" id="dday" data-fy="5245" data-fh="26" data-flow style="left:calc(40 * var(--u));top:calc(5245 * var(--u) + var(--dy, 0px));width:calc(340 * var(--u));z-index:161">12월 19일 결혼식까지 남은 날</div>
+<section class="info" data-fy="5564" data-fh="245" data-flow style="left:calc(73 * var(--u));top:calc(5564 * var(--u) + var(--dy, 0px));width:calc(310 * var(--u));z-index:162" aria-label="오시는 길"><h2 class="info-h">장소</h2><p class="info-p"><span>청주 리움웨딩컨벤션</span><br><span class="addr" data-copy="충북 청주시 서원구 남이면 남이가좌1길 195" role="button" tabindex="0" aria-label="주소 복사">충북 청주시 서원구 남이면 남이가좌1길 195</span></p><nav class="maps"><a href="https://map.naver.com/p/search/청주 리움웨딩컨벤션" target="_blank" rel="noopener">네이버지도</a><a href="https://map.kakao.com/link/search/청주 리움웨딩컨벤션" target="_blank" rel="noopener">카카오맵</a></nav><h2 class="info-h shuttle-h">셔틀 안내</h2><p class="info-p">롯데하이마트 청주터미널점 앞<br>11:00, 11:30, 12:00 운행</p></section>
+<img class="l" src="img/calbg.webp" alt="" loading="lazy" decoding="async" data-fy="4828" data-fh="434" style="left:calc(-12 * var(--u));top:calc(4828 * var(--u) + var(--dy, 0px));width:calc(444 * var(--u));height:calc(434 * var(--u) + var(--dh, 0px));z-index:167">
+<div class="cal" role="img" aria-label="2026년 12월 달력, 19일 토요일 결혼식" data-fy="4877" data-fh="340" style="left:calc(35 * var(--u));top:calc(4877 * var(--u) + var(--dy, 0px));width:calc(346 * var(--u));z-index:167"><div class="cal-head"><span>12월</span><span>2026</span></div><div class="cal-grid"><span class="d h">월</span><span class="d h">화</span><span class="d h">수</span><span class="d h">목</span><span class="d h">금</span><span class="d h">토</span><span class="d h">일</span><span class="d e"></span><span class="d">1</span><span class="d">2</span><span class="d">3</span><span class="d">4</span><span class="d">5</span><span class="d">6</span><span class="d">7</span><span class="d">8</span><span class="d">9</span><span class="d">10</span><span class="d">11</span><span class="d">12</span><span class="d">13</span><span class="d">14</span><span class="d">15</span><span class="d">16</span><span class="d">17</span><span class="d">18</span><span class="d d19">19</span><span class="d">20</span><span class="d">21</span><span class="d">22</span><span class="d">23</span><span class="d">24</span><span class="d">25</span><span class="d">26</span><span class="d">27</span><span class="d">28</span><span class="d">29</span><span class="d">30</span><span class="d">31</span><span class="d e"></span><span class="d e"></span></div></div>
+<section class="accs" data-fy="6191" data-fh="585" data-flow style="left:calc(46 * var(--u));top:calc(6191 * var(--u) + var(--dy, 0px));width:calc(326 * var(--u));z-index:168" aria-label="마음 전하실 곳"><div class="accs-head"><h2 class="accs-title">마음 전하실 곳</h2><p class="accs-note">참석이 어려우신 분들을 위해<br>계좌번호를 안내해드립니다.</p></div><div class="acc-group"><h3 class="acc-tape" style="background-image:url(img/tapeM.webp)">신랑측</h3><ul><li class="acc-row"><div class="acc-text"><span class="acc-who">신랑 윤종구</span><span class="acc-num"><span class="no">110-&#8203;402-&#8203;533264</span> <span class="bank">신한은행</span></span></div><button type="button" class="acc-copy" data-copy="110-402-533264" data-name="윤종구" aria-label="신랑 윤종구 계좌번호 복사">복사</button></li><li class="acc-row"><div class="acc-text"><span class="acc-who">신랑 아버지 윤종원</span><span class="acc-num"><span class="no">421-&#8203;02-&#8203;418653</span> <span class="bank">농협은행</span></span></div><button type="button" class="acc-copy" data-copy="421-02-418653" data-name="윤종원" aria-label="신랑 아버지 윤종원 계좌번호 복사">복사</button></li><li class="acc-row"><div class="acc-text"><span class="acc-who">신랑 어머니 김연순</span><span class="acc-num"><span class="no">352-&#8203;0067-&#8203;0652-&#8203;73</span> <span class="bank">농협은행</span></span></div><button type="button" class="acc-copy" data-copy="352-0067-0652-73" data-name="김연순" aria-label="신랑 어머니 김연순 계좌번호 복사">복사</button></li></ul></div><div class="acc-group"><h3 class="acc-tape" style="background-image:url(img/tapeP.webp)">신부측</h3><ul><li class="acc-row"><div class="acc-text"><span class="acc-who">신부 조인하</span><span class="acc-num"><span class="no">1000-&#8203;0001-&#8203;8774</span> <span class="bank">토스뱅크</span></span></div><button type="button" class="acc-copy" data-copy="1000-0001-8774" data-name="조인하" aria-label="신부 조인하 계좌번호 복사">복사</button></li><li class="acc-row"><div class="acc-text"><span class="acc-who">신부 아버지 조용태</span><span class="acc-num"><span class="no">9003-&#8203;2997-&#8203;0979-&#8203;5</span> <span class="bank">새마을금고</span></span></div><button type="button" class="acc-copy" data-copy="9003-2997-0979-5" data-name="조용태" aria-label="신부 아버지 조용태 계좌번호 복사">복사</button></li><li class="acc-row"><div class="acc-text"><span class="acc-who">신부 어머니 이재화</span><span class="acc-num"><span class="no">401-&#8203;01-&#8203;0608-&#8203;337</span> <span class="bank">국민은행</span></span></div><button type="button" class="acc-copy" data-copy="401-01-0608-337" data-name="이재화" aria-label="신부 어머니 이재화 계좌번호 복사">복사</button></li></ul></div></section>
+</main>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="사진 보기" hidden>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="x" id="lbX" type="button" aria-label="닫기">×</button>
+  <button class="pv" id="lbP" type="button" aria-label="이전 사진">‹</button>
+  <button class="nx" id="lbN" type="button" aria-label="다음 사진">›</button>
+</div>
+
+<script>
+(function () {
+  var stack = document.getElementById('toasts');
+  function drop(w) { if (w.classList.contains('out')) return; w.classList.add('out'); setTimeout(function () { w.remove(); }, 320); }
+  function show(html) {
+    [].forEach.call(stack.children, function (w) { w.classList.add('old'); });
+    var live = [].filter.call(stack.children, function (w) { return !w.classList.contains('out'); });
+    while (live.length > 2) drop(live.shift());
+    var w = document.createElement('div'); w.className = 'tw';
+    w.innerHTML = '<div><div class="toast">' + html + '</div></div>';
+    stack.appendChild(w); void w.offsetWidth; w.classList.add('on');
+    setTimeout(function () { drop(w); }, 2400);
+  }
+  function selectText(el) {
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  function copy(el) {
+    var text = el.getAttribute('data-copy');
+    var nm = el.getAttribute('data-name');
+    var done = function () { show(nm ? '<b>' + nm + '</b>님 계좌가 복사되었어요' : '주소가 복사되었어요'); };
+    var target = el.classList.contains('acc-copy') ? el.parentNode.querySelector('.acc-num') : el;
+    var fail = function () { selectText(target); show('길게 눌러 복사해 주세요'); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fail);
+    } else { fail(); }
+  }
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* reveal on scroll: everything stays visible until its own animation starts */
+  if (!reduce) document.documentElement.classList.add('go');
+  var t0 = performance.now(), INTRO_END = 2.7;
+  var cs = getComputedStyle(document.documentElement);
+  var PHOTO_GAP = parseFloat(cs.getPropertyValue('--photo-gap')) || .28;
+  var STICKER_GAP = parseFloat(cs.getPropertyValue('--sticker-gap')) || .14;
+  var TRIGGER = (cs.getPropertyValue('--trigger').trim() || '25%');
+  var watched = document.querySelectorAll('.card .pop, .card .tile, .card .ink, .card .cal');
+  if (!reduce) {
+    // Position check on scroll. (IntersectionObserver ignores rootMargin inside a cross-origin
+    // frame like the shared page, so the trigger line is measured directly instead.)
+    var pending = [].slice.call(watched);
+    var line = function () { return window.innerHeight * (1 - (parseFloat(TRIGGER) || 25) / 100); };
+    function reveal(list, base) {
+      var k = 0;
+      list.filter(function (n) { return n.matches('.pop'); })
+        .sort(function (a, b) { var ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect(); return ra.top - rb.top || ra.left - rb.left; })
+        .forEach(function (n) { n.style.setProperty('--d', (base + k).toFixed(2) + 's'); k += n.classList.contains('photo') ? PHOTO_GAP : STICKER_GAP; });
+      list.forEach(function (n) {
+        if (n.matches('.tile')) n.style.setProperty('--b', (base ? base - .3 : 0) + 's');
+        n.classList.add('in');
+      });
+    }
+    function take(test) {
+      var hit = [], rest = [];
+      pending.forEach(function (n) { (test(n) ? hit : rest).push(n); });
+      // a handwritten word and the letter beads start as a group
+      hit.slice().forEach(function (n) {
+        var g = n.getAttribute('data-ink'), grp = g ? '[data-ink="' + g + '"]' : n.matches('.tile') ? '.tile' : null;
+        if (!grp) return;
+        rest = rest.filter(function (m) { if (m.matches(grp)) { hit.push(m); return false; } return true; });
+      });
+      pending = rest; return hit;
+    }
+    // first screen joins the opening
+    var vh = window.innerHeight;
+    reveal(take(function (n) { return n.getBoundingClientRect().top < vh; }), INTRO_END);
+    // everything further down stays hidden until it reaches the trigger line
+    pending.forEach(function (n) { n.classList.add('wait'); });
+    var ticking = false;
+    function check() {
+      ticking = false; if (!pending.length) return;
+      var y = line();
+      var hit = take(function (n) { var r = n.getBoundingClientRect(); return r.top < y && r.bottom > 0; });
+      // at the very bottom, nothing may stay hidden
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4)
+        hit = hit.concat(take(function () { return true; }));
+      if (hit.length) reveal(hit, 0);
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(check); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+  }
+
+  /* D-day under the calendar (counted in Korea time) */
+  (function () {
+    var els = [].slice.call(document.querySelectorAll('#dday, .dday-text')); if (!els.length) return;
+    var now = new Date(Date.now() + 9 * 3600e3), today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    var d = Math.round((Date.UTC(2026, 11, 19) - today) / 864e5);
+    var txt = d > 1 ? '12월 19일 결혼식까지 <b>' + d + '일</b> 남았습니다'
+                 : d === 1 ? '<b>내일</b> 결혼합니다'
+                 : d === 0 ? '<b>오늘</b> 결혼합니다'
+                 : '함께한 지 <b>' + (1 - d) + '일</b>째';
+    els.forEach(function (el) { el.innerHTML = txt; });
+    document.querySelectorAll('.cal .d').forEach(function (n, i) { n.style.setProperty('--k', i); });
+  })();
+
+  /* Reflow: text blocks (D-day, place/shuttle, accounts) may render taller than in Figma
+     (small phones, enlarged text). Each block reports the extra height; then
+       - a paper that holds the block stretches by that much (middle only),
+       - anything that starts below the block moves down by that much,
+       - stickers beside the block stay where they are.
+     The card grows by the total, so nothing overlaps at any text size. */
+  function reflow() {
+    var card = document.querySelector('.card'); if (!card) return;
+    var u = card.clientWidth / 420;
+    var all = [].slice.call(card.querySelectorAll('[data-fy]'));
+    all.forEach(function (n) { n.style.removeProperty('--dy'); n.style.removeProperty('--dh'); });
+    card.style.height = '';
+    var blocks = [].slice.call(card.querySelectorAll('[data-flow]')).map(function (n) {
+      var y = +n.dataset.fy, h = +n.dataset.fh;
+      return { n: n, y: y, end: y + h, d: Math.max(0, n.getBoundingClientRect().height / u - h) };
+    });
+    var total = 0;
+    blocks.forEach(function (b) { total += b.d; });
+    all.forEach(function (n) {
+      if (n.dataset.anchor) return;                         // placed after, relative to its heading
+      var y = +n.dataset.fy, h = +n.dataset.fh, dy = 0, dh = 0;
+      blocks.forEach(function (b) {
+        if (b.n === n || !b.d) return;
+        if (y >= b.end - 2) dy += b.d;                      // below the block: move down
+        else if (y < b.y && y + h > b.end) dh += b.d;       // holds the block: stretch
+      });
+      if (dy) n.style.setProperty('--dy', (dy * u) + 'px');
+      if (dh) n.style.setProperty('--dh', (dh * u) + 'px');
+    });
+    if (total) card.style.height = (card.getBoundingClientRect().height + total * u) + 'px';
+    // stickers tied to a heading: keep their Figma offset from that heading
+    var ct = card.getBoundingClientRect().top;
+    card.querySelectorAll('[data-anchor]').forEach(function (n) {
+      var a = card.querySelector(n.dataset.anchor); if (!a) return;
+      var moved = (a.getBoundingClientRect().top - ct) / u - (+n.dataset.afy);
+      if (Math.abs(moved) > .5) n.style.setProperty('--dy', (moved * u) + 'px');
+    });
+  }
+  reflow();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(reflow);
+  var rfT; window.addEventListener('resize', function () { clearTimeout(rfT); rfT = setTimeout(reflow, 80); });
+
+  /* decorative text: if the phone enlarges letters, scale it back to its Figma box */
+  var FIT_MIN = 1;
+  function fit() {
+    FIT_MIN = 1;
+    document.querySelectorAll('[data-fit]').forEach(function (el) {
+      var sp = el.firstElementChild; if (!sp) return;
+      sp.style.transform = '';
+      var k = el.clientWidth / sp.scrollWidth;
+      if (k < 1) { sp.style.transform = 'scale(' + k.toFixed(3) + ')'; FIT_MIN = Math.min(FIT_MIN, k); }
+    });
+  }
+  // fit only against the real fonts: load the three decorative faces by name, then fit;
+  // re-fit whenever any font finishes loading (slow phones, late Google fonts)
+  function refit() { fit(); reflow(); }
+  if (document.fonts && document.fonts.load) {
+    Promise.all(["32px Griun", "22px Gowun", "500 12px Gmarket"].map(function (f) { return document.fonts.load(f, '가a1'); }))
+      .then(refit, refit);
+    document.fonts.addEventListener && document.fonts.addEventListener('loadingdone', refit);
+  } else fit();
+  window.addEventListener('resize', fit);
+
+
+  /* easter egg: hearts float up from the exact spot that was tapped */
+  var HC = ['#FF8FAB', '#F7A1B8', '#FF7A9A'];
+  var HSVG = '<svg viewBox="0 0 26 24" width="100%" height="100%"><path fill="currentColor" stroke="#fff" stroke-width="2" stroke-linejoin="round" d="M13 22 11.4 20.6C5.6 15.4 1.8 12 1.8 7.8 1.8 4.4 4.4 1.8 7.8 1.8c1.9 0 3.8.9 5.2 2.4 1.4-1.5 3.3-2.4 5.2-2.4 3.4 0 6 2.6 6 6 0 4.2-3.8 7.6-9.6 12.8z"/><ellipse cx="7.6" cy="7" rx="2.2" ry="1.5" fill="#fff" opacity=".75" transform="rotate(-35 7.6 7)"/></svg>';
+  function hearts(x, y) {
+    if (reduce) return;
+    var n = Math.random() < .5 ? 2 : 3;
+    for (var i = 0; i < n; i++) {
+      var h = document.createElement('span'); h.className = 'heart'; h.innerHTML = '<i>' + HSVG + '</i>';
+      var sz = i === 0 ? 24 : 15 + Math.random() * 5;
+      h.style.left = (x + (i === 0 ? 0 : (i === 1 ? -1 : 1) * (12 + Math.random() * 6))) + 'px';
+      h.style.top = (y - (i === 0 ? 0 : 6)) + 'px';
+      h.style.width = h.style.height = sz + 'px';
+      h.style.color = HC[i % HC.length];
+      h.style.setProperty('--hx', (i === 0 ? 0 : (i === 1 ? -1 : 1) * (8 + Math.random() * 8)) + 'px');
+      h.style.setProperty('--hy', -(56 + Math.random() * 24 - i * 8) + 'px');
+      h.style.animationDelay = (i * 110) + 'ms';
+      document.body.appendChild(h);
+      setTimeout(function (el) { el.remove(); }, 1800, h);
+    }
+  }
+
+  /* photo viewer */
+  var photos = [];
+  function collectPhotos() {
+    var scope = '.card [data-photo]';
+    photos = [].slice.call(document.querySelectorAll(scope)).sort(function (a, b) { return a.dataset.photo - b.dataset.photo; });
+  }
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap'), cur = 0, lastFocus;
+  function showPhoto(i) {
+    cur = (i + photos.length) % photos.length;
+    var el = photos[cur]; lbImg.src = el.getAttribute('src') || el.querySelector('img').getAttribute('src');
+    lbImg.style.setProperty('--tilt', ((cur % 3) - 1) * 1.6 + 'deg');
+    lbCap.textContent = (cur + 1) + ' / ' + photos.length;
+  }
+  function openLb(i) {
+    collectPhotos(); lastFocus = document.activeElement; showPhoto(i); lb.hidden = false;
+    requestAnimationFrame(function () { lb.classList.add('on'); }); document.getElementById('lbX').focus();
+  }
+  function closeLb() {
+    lb.classList.remove('on'); setTimeout(function () { lb.hidden = true; }, reduce ? 0 : 250);
+    if (lastFocus) lastFocus.focus();
+  }
+  document.getElementById('lbX').onclick = closeLb;
+  document.getElementById('lbP').onclick = function () { showPhoto(cur - 1); };
+  document.getElementById('lbN').onclick = function () { showPhoto(cur + 1); };
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.tagName === 'FIGURE') closeLb(); });
+  var sx = null;
+  lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (sx === null) return; var dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 40) showPhoto(cur + (dx < 0 ? 1 : -1));
+  });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowRight') showPhoto(cur + 1);
+    if (e.key === 'ArrowLeft') showPhoto(cur - 1);
+  });
+
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-copy]'); if (el) { copy(el); return; }
+    var st = e.target.closest('.tap');
+    if (st) { st.classList.remove('wig'); void st.offsetWidth; st.classList.add('wig'); hearts(e.clientX, e.clientY); }
+  });
+  document.addEventListener('keydown', function (e) {
+    var ph = e.target.closest && e.target.closest('[data-photo]');
+    if (ph && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openLb(+ph.dataset.photo); }
+  });
+  document.addEventListener('keydown', function (e) {
+    var el = e.target.closest && e.target.closest('[data-copy]');
+    if (el && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); copy(el); }
+  });
+})();
+</script>
+</body>
+</html>
